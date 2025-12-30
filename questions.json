@@ -1,0 +1,25 @@
+{
+  "dimensions": ["fieldwork", "data", "policy", "industry", "conservation"],
+  "questions": [
+    {
+      "id": "q1",
+      "text": "¿Qué te motiva más en un trabajo?",
+      "options": [
+        { "label": "Estar en el mar / muestreos", "add": { "fieldwork": 2, "conservation": 1 } },
+        { "label": "Analizar datos", "add": { "data": 2 } },
+        { "label": "Influir en políticas públicas", "add": { "policy": 2 } },
+        { "label": "Operación y resultados", "add": { "industry": 2 } }
+      ]
+    },
+    {
+      "id": "q2",
+      "text": "¿Qué tipo de tareas disfrutas más?",
+      "options": [
+        { "label": "Campo y laboratorio", "add": { "fieldwork": 2 } },
+        { "label": "GIS / programación", "add": { "data": 2 } },
+        { "label": "Coordinar personas", "add": { "policy": 2 } },
+        { "label": "Procesos y logística", "add": { "industry": 2 } }
+      ]
+    }
+  ]
+}

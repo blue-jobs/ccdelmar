@@ -1,0 +1,28 @@
+{
+  "profiles": [
+    {
+      "id": "marine_biodiversity",
+      "name": "Técnic@ de biodiversidad marina",
+      "tags": ["campo", "biodiversidad"],
+      "dims": { "fieldwork": 3, "conservation": 3, "data": 1, "policy": 0, "industry": 0 }
+    },
+    {
+      "id": "ocean_data",
+      "name": "Analista de datos oceánicos / GIS",
+      "tags": ["datos", "GIS"],
+      "dims": { "fieldwork": 0, "conservation": 1, "data": 4, "policy": 1, "industry": 0 }
+    },
+    {
+      "id": "marine_policy",
+      "name": "Gestor@ de proyectos marinos",
+      "tags": ["gestión", "política"],
+      "dims": { "fieldwork": 0, "conservation": 1, "data": 1, "policy": 4, "industry": 0 }
+    },
+    {
+      "id": "offshore_ops",
+      "name": "Especialista en operaciones offshore",
+      "tags": ["empresa", "operaciones"],
+      "dims": { "fieldwork": 3, "conservation": 0, "data": 0, "policy": 0, "industry": 4 }
+    }
+  ]
+}
