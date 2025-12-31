@@ -3,59 +3,45 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Blue-jobs · Orientación profesional</title>
 
-  <title>Descubre tu Perfil Profesional en Ciencias del Mar</title>
-
-  <!-- Google Font -->
+  <!-- Poppins -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
-
-  <!-- HEADER -->
+  <!-- Top bar -->
   <header class="topbar">
-    <img 
-      src="https://firebasestorage.googleapis.com/v0/b/bluejobs-cab7c.appspot.com/o/About%20us%2Fbj-logo.png?alt=media&token=0d82894b-9562-48b4-aab7-6c8a5349ec9f"
-      alt="Blue-jobs"
-      class="logo"
-    >
+    <div class="topbar-inner">
+      <div class="brand">
+        <img class="brand-logo"
+          src="https://firebasestorage.googleapis.com/v0/b/bluejobs-cab7c.appspot.com/o/About%20us%2Fbj-logo.png?alt=media&token=0d82894b-9562-48b4-aab7-6c8a5349ec9f"
+          alt="Blue-jobs logo" />
+        <span class="brand-text">blue-jobs</span>
+      </div>
+    </div>
   </header>
 
-  <!-- MAIN -->
-  <main class="container">
-
-    <section class="intro">
+  <main class="page">
+    <section class="hero">
       <h1>Descubre tu Perfil Profesional en Ciencias del Mar</h1>
-      <p class="subtitle">
+      <p class="hero-subtitle">
         Responde unas preguntas y explora los perfiles profesionales que mejor encajan contigo.
       </p>
     </section>
 
-    <!-- PROGRESS BAR -->
-    <div class="progress-wrapper">
-      <div class="progress-bar">
-        <div id="progress-fill"></div>
-      </div>
-      <span id="progress-text" class="progress-text"></span>
-    </div>
-
-    <!-- CARD (preguntas / resultados) -->
-    <section id="card" class="card"></section>
+    <section id="card" class="card" aria-live="polite"></section>
 
     <footer class="footer">
-      <p>
-        Nota: este test no guarda datos personales.
-        <br>
-        Los resultados se calculan únicamente en tu navegador.
+      <p class="muted">
+        Nota: este test no guarda datos personales. Los resultados se calculan únicamente en tu navegador.
       </p>
     </footer>
-
   </main>
 
-  <script src="js/app.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
