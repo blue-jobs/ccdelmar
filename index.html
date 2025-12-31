@@ -3,37 +3,57 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Test de Autoconocimiento – Ciencias del Mar</title>
 
-  <!-- Poppins -->
+  <title>Descubre tu Perfil Profesional en Ciencias del Mar</title>
+
+  <!-- Google Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <main class="container">
-    <header class="header">
-      <div class="brand">
-        <img
-          class="brand-logo"
-          src="https://firebasestorage.googleapis.com/v0/b/bluejobs-cab7c.appspot.com/o/About%20us%2Fbj-logo.png?alt=media&token=0d82894b-9562-48b4-aab7-6c8a5349ec9f"
-          alt="Blue-jobs"
-        />
-        <div class="brand-text">
-          <div class="brand-kicker">Blue-jobs · Orientación profesional</div>
-          <h1>Descubre tu Perfil Profesional en Ciencias del Mar</h1>
-          <p class="muted">Responde unas preguntas y explora las carreras marinas que mejor encajan contigo.</p>
-        </div>
-      </div>
-    </header>
 
+<body>
+
+  <!-- HEADER -->
+  <header class="topbar">
+    <img 
+      src="https://firebasestorage.googleapis.com/v0/b/bluejobs-cab7c.appspot.com/o/About%20us%2Fbj-logo.png?alt=media&token=0d82894b-9562-48b4-aab7-6c8a5349ec9f"
+      alt="Blue-jobs"
+      class="logo"
+    >
+  </header>
+
+  <!-- MAIN -->
+  <main class="container">
+
+    <section class="intro">
+      <h1>Descubre tu Perfil Profesional en Ciencias del Mar</h1>
+      <p class="subtitle">
+        Responde unas preguntas y explora los perfiles profesionales que mejor encajan contigo.
+      </p>
+    </section>
+
+    <!-- PROGRESS BAR -->
+    <div class="progress-wrapper">
+      <div class="progress-bar">
+        <div id="progress-fill"></div>
+      </div>
+      <span id="progress-text" class="progress-text"></span>
+    </div>
+
+    <!-- CARD (preguntas / resultados) -->
     <section id="card" class="card"></section>
 
-    <footer class="footer muted">
-      <p>Nota: este test no guarda datos personales (solo calcula resultados en tu navegador).</p>
+    <footer class="footer">
+      <p>
+        Nota: este test no guarda datos personales.
+        <br>
+        Los resultados se calculan únicamente en tu navegador.
+      </p>
     </footer>
+
   </main>
 
   <script src="js/app.js"></script>
