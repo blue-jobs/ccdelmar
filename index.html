@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Blue-jobs · Orientación profesional</title>
+  <title>Blue-jobs | Descubre tu Perfil Profesional en Ciencias del Mar</title>
 
   <!-- Poppins -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,34 +12,42 @@
 
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-  <!-- Top bar -->
+  <!-- Top bar with logo -->
   <header class="topbar">
-    <div class="topbar-inner">
-      <div class="brand">
-        <img class="brand-logo"
-          src="https://firebasestorage.googleapis.com/v0/b/bluejobs-cab7c.appspot.com/o/About%20us%2Fbj-logo.png?alt=media&token=0d82894b-9562-48b4-aab7-6c8a5349ec9f"
-          alt="Blue-jobs logo" />
-        <span class="brand-text">blue-jobs</span>
-      </div>
-    </div>
+    <a class="brand" href="#" aria-label="Blue-jobs">
+      <img
+        class="brand__logo"
+        src="https://firebasestorage.googleapis.com/v0/b/bluejobs-cab7c.appspot.com/o/About%20us%2Fbj-logo.png?alt=media&token=0d82894b-9562-48b4-aab7-6c8a5349ec9f"
+        alt="Blue-jobs logo"
+      />
+      <span class="brand__name">blue-jobs</span>
+    </a>
   </header>
 
-  <main class="page">
-    <section class="hero">
-      <h1>Descubre tu Perfil Profesional en Ciencias del Mar</h1>
-      <p class="hero-subtitle">
-        Responde unas preguntas y explora los perfiles profesionales que mejor encajan contigo.
-      </p>
+  <main class="shell">
+    <section class="layout">
+      <!-- Left image panel -->
+      <aside class="visual" aria-hidden="true">
+        <img
+          class="visual__img"
+          src="https://firebasestorage.googleapis.com/v0/b/bluejobs-cab7c.appspot.com/o/Test%20autoconocimiento%2FImages%20test%20autoconocimiento.png?alt=media&token=8866c980-7b5f-449d-8b5e-4818c0b58603"
+          alt=""
+        />
+      </aside>
+
+      <!-- Right content panel -->
+      <section class="content">
+        <div class="content__inner">
+          <div id="card" class="card" role="region" aria-live="polite"></div>
+
+          <p class="note">
+            Nota: este test no guarda datos personales. Los resultados se calculan únicamente en tu navegador.
+          </p>
+        </div>
+      </section>
     </section>
-
-    <section id="card" class="card" aria-live="polite"></section>
-
-    <footer class="footer">
-      <p class="muted">
-        Nota: este test no guarda datos personales. Los resultados se calculan únicamente en tu navegador.
-      </p>
-    </footer>
   </main>
 
   <script src="app.js"></script>
