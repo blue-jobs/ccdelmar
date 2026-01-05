@@ -63,18 +63,13 @@ body{
 }
 
 .layout{
-  max-width: 1100px;
-  margin: 0 auto;
-  display:grid;
-
-  /* ✅ CAMBIO: columnas 50/50 */
-  grid-template-columns: 1fr 1fr;
-
+  width: 100%;
+  max-width: none;       /* ✅ quita el límite */
+  margin: 0;             /* ✅ sin centrar con márgenes */
+  display: grid;
+  grid-template-columns: 1fr 1fr;   /* ✅ 50/50 */
   gap: 18px;
-
-  /* Mantén esta altura si tienes topbar; si no, sigue quedando bien */
   min-height: calc(100vh - 74px);
-
   align-items: stretch;
 }
 
@@ -97,7 +92,8 @@ body{
   width:100%;
   height:100%;
   display:block;
-  object-fit: cover;
+  object-fit: contain;   /* ✅ muestra la imagen completa */
+  background: #e9f7f7;   /* opcional: fondo suave si sobran bandas */
 }
 
 /* Panel derecho */
@@ -140,7 +136,8 @@ body{
 .lead{
   margin: 0 0 18px;
   color: var(--muted);
-  font-size: 14px;
+  font-size: 18px;
+  line-height: 1.6; 
 }
 .h2{
   font-size: 20px;
