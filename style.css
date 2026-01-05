@@ -98,11 +98,8 @@ body{
 
 /* Panel derecho */
 .content{
-  display:flex;
-
-  /* ✅ CAMBIO: centrado bonito y consistente */
-  align-items:center;
-  justify-content:center;
+  display: flex;
+  align-items: stretch;     /* 👈 clave */
 }
 
 .content__inner{
@@ -116,19 +113,15 @@ body{
 }
 
 .card{
-  background: var(--card);
-  border: 1px solid rgba(11,31,31,.06);
-  border-radius: var(--radius-xl);
-
-  /* ✅ CAMBIO: un poco más de padding para “aire” */
-  padding: 26px;
-
-  box-shadow: var(--shadow);
+  height: 100%;             /* 👈 clave */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  /* centra el contenido verticalmente */
 }
 
 /* Text */
 .h1{
-  font-size: 28px;
+  font-size: 40px;
   line-height: 1.15;
   margin: 0 0 10px;
   color: var(--primary);
@@ -136,16 +129,16 @@ body{
 .lead{
   margin: 0 0 18px;
   color: var(--muted);
-  font-size: 18px;
+  font-size: 22px;
   line-height: 1.6; 
 }
 .h2{
-  font-size: 20px;
+  font-size: 22px;
   margin: 0 0 14px;
 }
 .muted{
   color: var(--muted);
-  font-size: 14px;
+  font-size: 20px;
 }
 
 /* Progress */
@@ -161,7 +154,7 @@ body{
 }
 .progress__label{
   color: var(--muted);
-  font-size: 14px;
+  font-size: 22px;
 }
 .progress__bar{
   height: 10px;
@@ -258,22 +251,14 @@ body{
 
 /* Mobile */
 @media (max-width: 900px){
-  .layout{
-    grid-template-columns: 1fr;
-    min-height: auto;
-  }
-
-  /* ✅ En móvil la imagen arriba como banner */
-  .visual{
-    height: 170px;
-    min-height: 170px;
-  }
-
-  /* ✅ Ajuste: evitamos forzar altura completa en móvil */
   .content{
-    min-height: auto;
     align-items: flex-start;
   }
+
+  .card{
+    height: auto;          /* 👈 desactivamos altura forzada */
+  }
+}
 
   .content__inner{
     margin: 0;
