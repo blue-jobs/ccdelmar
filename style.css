@@ -28,7 +28,7 @@ body{
   background: var(--bg);
 }
 
-/* Top bar */
+/* Top bar (si ya lo eliminaste del HTML, no pasa nada) */
 .topbar{
   position: sticky;
   top:0;
@@ -61,16 +61,30 @@ body{
 .shell{
   padding: 18px;
 }
+
 .layout{
   max-width: 1100px;
   margin: 0 auto;
   display:grid;
-  grid-template-columns: 1fr 1.25fr;
+
+  /* ✅ CAMBIO: columnas 50/50 */
+  grid-template-columns: 1fr 1fr;
+
   gap: 18px;
+
+  /* Mantén esta altura si tienes topbar; si no, sigue quedando bien */
   min-height: calc(100vh - 74px);
+
   align-items: stretch;
 }
 
+/* ✅ CAMBIO: aseguramos que ambos paneles estiren a la misma altura */
+.visual,
+.content{
+  min-height: calc(100vh - 74px);
+}
+
+/* Panel izquierdo */
 .visual{
   border-radius: var(--radius-xl);
   overflow:hidden;
@@ -78,6 +92,7 @@ body{
   box-shadow: var(--shadow);
   border: 1px solid rgba(11,31,31,.06);
 }
+
 .visual__img{
   width:100%;
   height:100%;
@@ -85,21 +100,33 @@ body{
   object-fit: cover;
 }
 
+/* Panel derecho */
 .content{
   display:flex;
+
+  /* ✅ CAMBIO: centrado bonito y consistente */
   align-items:center;
+  justify-content:center;
 }
+
 .content__inner{
   width:100%;
-  max-width: 620px;
-  margin-left: auto;
+
+  /* ✅ CAMBIO: card más grande y que no quede “perdido” */
+  max-width: 720px;
+
+  /* ✅ CAMBIO: centrado (sin empujar a la derecha) */
+  margin: 0 auto;
 }
 
 .card{
   background: var(--card);
   border: 1px solid rgba(11,31,31,.06);
   border-radius: var(--radius-xl);
-  padding: 22px;
+
+  /* ✅ CAMBIO: un poco más de padding para “aire” */
+  padding: 26px;
+
   box-shadow: var(--shadow);
 }
 
@@ -116,12 +143,12 @@ body{
   font-size: 14px;
 }
 .h2{
-  font-size: 18px;
+  font-size: 20px;
   margin: 0 0 14px;
 }
 .muted{
   color: var(--muted);
-  font-size: 13px;
+  font-size: 14px;
 }
 
 /* Progress */
@@ -137,7 +164,7 @@ body{
 }
 .progress__label{
   color: var(--muted);
-  font-size: 12px;
+  font-size: 14px;
 }
 .progress__bar{
   height: 10px;
@@ -217,7 +244,7 @@ body{
 }
 .tag{
   display:inline-block;
-  font-size: 12px;
+  font-size: 14px;
   padding: 5px 10px;
   border-radius: 999px;
   border: 1px solid rgba(11,31,31,.10);
@@ -229,7 +256,7 @@ body{
 .note{
   margin: 12px 6px 0;
   color: rgba(75,102,102,.9);
-  font-size: 12px;
+  font-size: 14px;
 }
 
 /* Mobile */
@@ -238,13 +265,24 @@ body{
     grid-template-columns: 1fr;
     min-height: auto;
   }
+
+  /* ✅ En móvil la imagen arriba como banner */
   .visual{
-    height: 170px;              /* imagen arriba, más pequeña */
+    height: 170px;
+    min-height: 170px;
   }
+
+  /* ✅ Ajuste: evitamos forzar altura completa en móvil */
+  .content{
+    min-height: auto;
+    align-items: flex-start;
+  }
+
   .content__inner{
     margin: 0;
     max-width: 100%;
   }
+
   .h1{ font-size: 22px; }
   .card{ padding: 18px; }
 }
