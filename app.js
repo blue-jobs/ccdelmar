@@ -1,20 +1,12 @@
 const card = document.getElementById("card");
 
 let state = {
-  started: false,
   qIndex: 0,
-  scores: {},
-  dimensions: [],
   questions: [],
   profiles: [],
-  answers: [] // guardamos { qIndex, add } para poder "Atrás" y revertir score
+  answersHard: {},  // { requires_diving: true/false, ... }
+  history: []       // snapshots para "Back" real
 };
-
-function initScores(dims) {
-  const s = {};
-  dims.forEach(d => s[d] = 0);
-  return s;
-}
 
 async function loadData() {
   const qRes = await fetch("questions.json");
@@ -23,100 +15,63 @@ async function loadData() {
   const pRes = await fetch("profiles.json");
   const pData = await pRes.json();
 
-  state.dimensions = qData.dimensions;
-  state.questions = qData.questions;
-  state.profiles = pData.profiles;
-  state.scores = initScores(state.dimensions);
+  state.questions = qData.questions || [];
+  state.profiles = pData.profiles || [];
 
   renderIntro();
 }
 
-function addScores(add) {
-  Object.entries(add || {}).forEach(([k, v]) => {
-    state.scores[k] = (state.scores[k] || 0) + v;
-  });
-}
-
-function subtractScores(add) {
-  Object.entries(add || {}).forEach(([k, v]) => {
-    state.scores[k] = (state.scores[k] || 0) - v;
-  });
-}
-
-function progressPercent() {
-  const total = state.questions.length || 1;
-  // Progreso "hasta la pregunta actual" (0% en la 1ª)
-  return Math.round((state.qIndex / total) * 100);
-}
-
-function renderProgress() {
-  const pct = progressPercent();
-  const current = Math.min(state.qIndex + 1, state.questions.length);
-  const total = state.questions.length;
-
-  return `
-    <div class="progress">
-      <div class="progress__top">
-        <span class="progress__label">Progreso</span>
-        <span class="progress__label">${current}/${total}</span>
-      </div>
-      <div class="progress__bar" aria-label="Barra de progreso">
-        <div class="progress__fill" style="width:${pct}%"></div>
-      </div>
-    </div>
-  `;
-}
-
-/* ---------- Screens ---------- */
-
 function renderIntro() {
-  state.started = false;
+  state.qIndex = 0;
+  state.answersHard = {};
+  state.history = [];
 
   card.innerHTML = `
-    <h1 class="h1">Descubre tu Perfil Profesional en Ciencias del Mar</h1>
+    <h1 class="h1">Hard Filters Test (Prototype)</h1>
     <p class="lead">
-      Responde unas preguntas y explora los perfiles profesionales que mejor encajan contigo.
-      Te mostraremos tus <strong>Top perfiles</strong> y por qué.
+      This version only tests the <strong>hard questions</strong>. At the end, you’ll see which profiles match your answers.
     </p>
-
     <div class="row">
-      <button class="btn btn--primary" id="startBtn">Empezar</button>
+      <button class="btn btn--primary" id="startBtn">Start</button>
     </div>
-
     <p class="muted" style="margin-top:12px;">
-      ⏱️ Duración estimada: 3–6 min (según número de preguntas).
+      Loaded: ${state.questions.length} questions · ${state.profiles.length} profiles
     </p>
   `;
 
-  document.getElementById("startBtn").onclick = () => {
-    state.started = true;
-    state.qIndex = 0;
-    state.answers = [];
-    state.scores = initScores(state.dimensions);
-    renderQuestion();
-  };
+  document.getElementById("startBtn").onclick = () => renderQuestion();
 }
 
 function renderQuestion() {
   const q = state.questions[state.qIndex];
+  const total = state.questions.length;
 
   if (!q) {
     renderResults();
     return;
   }
 
-  const canGoBack = state.qIndex > 0;
-
   card.innerHTML = `
-    ${renderProgress()}
-
     <h2 class="h2">${q.text}</h2>
 
     <div class="options" id="opts"></div>
 
-    <div class="row" style="margin-top:16px;">
-      <button class="btn btn--ghost" id="backBtn" ${canGoBack ? "" : "disabled"}>Atrás</button>
+    <div class="progress">
+      <div class="progress__top">
+        <span class="progress__label">Progress</span>
+        <span class="progress__label">${state.qIndex + 1} / ${total}</span>
+      </div>
+      <div class="progress__bar">
+        <div class="progress__fill" style="width:${Math.round((state.qIndex / total) * 100)}%"></div>
+      </div>
     </div>
+
+    <div class="row">
+      <button class="btn btn--ghost" id="backBtn" ${state.history.length === 0 ? "disabled" : ""}>Back</button>
+      <button class="btn btn--ghost" id="restartBtn">Restart</button>
+    </div>
+
+    <p class="muted" style="margin-top:10px;">Hard answers captured: ${Object.keys(state.answersHard).length}</p>
   `;
 
   const opts = document.getElementById("opts");
@@ -124,91 +79,120 @@ function renderQuestion() {
   q.options.forEach(o => {
     const b = document.createElement("button");
     b.className = "btn option";
-    b.type = "button";
     b.textContent = o.label;
 
     b.onclick = () => {
-      // Guardamos la respuesta para poder volver atrás
-      state.answers[state.qIndex] = { add: o.add || {} };
+      // 1) snapshot para back real (antes de aplicar cambios)
+      state.history.push({
+        qIndex: state.qIndex,
+        answersHard: JSON.parse(JSON.stringify(state.answersHard))
+      });
 
-      // Sumamos puntuación y avanzamos
-      addScores(o.add || {});
+      // 2) aplicar hard mapping de esta opción
+      if (o.hard) {
+        Object.entries(o.hard).forEach(([k, v]) => {
+          state.answersHard[k] = v;
+        });
+      }
+
+      // 3) avanzar
       state.qIndex++;
-
-      if (state.qIndex < state.questions.length) renderQuestion();
-      else renderResults();
+      renderQuestion();
     };
 
     opts.appendChild(b);
   });
 
   document.getElementById("backBtn").onclick = () => {
-    if (state.qIndex <= 0) return;
-
-    // Volvemos una pregunta
-    state.qIndex--;
-
-    // Revertimos el score de la respuesta que se había dado a esa pregunta
-    const prev = state.answers[state.qIndex];
-    if (prev && prev.add) subtractScores(prev.add);
-
-    // “Borramos” esa respuesta para evitar inconsistencias si cambian
-    state.answers[state.qIndex] = null;
-
+    if (state.history.length === 0) return;
+    const prev = state.history.pop();
+    state.qIndex = prev.qIndex;
+    state.answersHard = prev.answersHard;
     renderQuestion();
   };
+
+  document.getElementById("restartBtn").onclick = () => renderIntro();
 }
 
-function scoreProfile(p) {
-  let total = 0;
-  const dims = (p && p.dims) ? p.dims : {};
-  Object.keys(state.scores).forEach(dim => {
-    total += (state.scores[dim] || 0) * (dims[dim] || 0);
-  });
-  return total;
+/**
+ * Lógica hard:
+ * - Si el perfil tiene hard[key] === true y el usuario respondió false → NO pasa
+ * - Si el perfil tiene hard[key] === false y el usuario respondió true → NO pasa
+ * - Si el perfil no define ese hard[key], NO filtramos (lo tratamos como "unknown/neutral")
+ */
+function passesHardFilters(profile) {
+  const hard = profile.hard || {};
+
+  for (const [key, userVal] of Object.entries(state.answersHard)) {
+    if (!(key in hard)) continue; // si el perfil no lo tiene definido, no filtramos por ese criterio
+
+    const profileVal = hard[key];
+
+    if (profileVal === true && userVal === false) return false;
+    if (profileVal === false && userVal === true) return false;
+  }
+
+  return true;
 }
 
 function renderResults() {
-  const ranked = state.profiles
-    .map(p => ({ ...p, score: scoreProfile(p) }))
-    .sort((a, b) => b.score - a.score)
-    .slice(0, 5);
+  const filtered = state.profiles.filter(p => passesHardFilters(p));
+
+  // Orden simple: por nombre
+  const ordered = filtered.slice().sort((a, b) => (a.name || "").localeCompare(b.name || ""));
 
   card.innerHTML = `
-    <div class="progress">
-      <div class="progress__top">
-        <span class="progress__label">Completado</span>
-        <span class="progress__label">100%</span>
-      </div>
-      <div class="progress__bar">
-        <div class="progress__fill" style="width:100%"></div>
+    <h2 class="h2">Results (Hard Filters)</h2>
+
+    <p class="lead">
+      Matching profiles: <strong>${filtered.length}</strong> / ${state.profiles.length}
+    </p>
+
+    <div class="result">
+      <strong>Your hard answers</strong>
+      <div class="tags">
+        ${Object.entries(state.answersHard).map(([k,v]) => `<span class="tag">${k}: ${v ? "Yes" : "No"}</span>`).join("")}
       </div>
     </div>
 
-    <h2 class="h2">Tus resultados</h2>
-    <p class="muted">Aquí tienes los perfiles que mejor encajan contigo según tus respuestas.</p>
-
-    ${ranked.map(r => `
-      <div class="result">
-        <strong>${r.name}</strong>
-        <div class="tags">
-          ${(r.tags || []).slice(0, 10).map(t => `<span class="tag">${t}</span>`).join("")}
-        </div>
-        <div class="muted" style="margin-top:8px;">Afinidad: ${r.score}</div>
+    <div class="result">
+      <strong>Profiles that match</strong>
+      <div class="muted" style="margin-top:6px;">
+        Showing first ${Math.min(20, ordered.length)} (alphabetical)
       </div>
-    `).join("")}
+      ${ordered.slice(0, 20).map(p => `
+        <div style="margin-top:10px;">
+          <strong>${p.name}</strong><br>
+          <span class="muted">${p.id}</span>
+        </div>
+      `).join("")}
+    </div>
 
     <div class="row" style="margin-top:16px;">
-      <button class="btn" id="restartBtn">Reiniciar</button>
+      <button class="btn btn--primary" id="restartBtn2">Restart</button>
+      <button class="btn btn--ghost" id="backToLastBtn" ${state.history.length === 0 ? "disabled" : ""}>Back to last question</button>
     </div>
   `;
 
-  document.getElementById("restartBtn").onclick = () => {
-    renderIntro();
-  };
+  document.getElementById("restartBtn2").onclick = () => renderIntro();
+
+  const backBtn = document.getElementById("backToLastBtn");
+  if (backBtn) {
+    backBtn.onclick = () => {
+      if (state.history.length === 0) return;
+      const prev = state.history.pop();
+      state.qIndex = prev.qIndex;
+      state.answersHard = prev.answersHard;
+      renderQuestion();
+    };
+  }
 }
 
 loadData().catch(err => {
   console.error(err);
-  card.innerHTML = `<p class="muted">Error cargando preguntas/perfiles. Revisa que questions.json y profiles.json estén en la raíz.</p>`;
+  card.innerHTML = `
+    <h2 class="h2">Error</h2>
+    <p class="lead">Could not load <code>questions.json</code> or <code>profiles.json</code>.</p>
+    <p class="muted">Open DevTools → Console to see details.</p>
+  `;
 });
