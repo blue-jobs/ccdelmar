@@ -1,28 +1,1398 @@
 {
   "profiles": [
     {
-      "id": "marine_biodiversity",
-      "name": "Técnic@ de biodiversidad marina",
-      "tags": ["campo", "biodiversidad"],
-      "dims": { "fieldwork": 3, "conservation": 3, "data": 1, "policy": 0, "industry": 0 }
+      "id": "marine_ocean_policy_officer",
+      "name": "Marine & Ocean Policy Officer",
+      "hard": {
+        "requires_diving": false,
+        "requires_offshore": false,
+        "requires_travel": false,
+        "requires_lab": false,
+        "requires_programing": false,
+        "requires_policy_interest": true,
+        "requires_engagement": true,
+        "requires_coordination": true,
+        "requires_physical": false
+      },
+      "dims": {},
+      "tags": []
     },
     {
-      "id": "ocean_data",
-      "name": "Analista de datos oceánicos / GIS",
-      "tags": ["datos", "GIS"],
-      "dims": { "fieldwork": 0, "conservation": 1, "data": 4, "policy": 1, "industry": 0 }
+      "id": "eu_international_policy_officer",
+      "name": "EU & International Policy Officer",
+      "hard": {
+        "requires_diving": false,
+        "requires_offshore": false,
+        "requires_travel": true,
+        "requires_lab": false,
+        "requires_programing": false,
+        "requires_policy_interest": true,
+        "requires_engagement": true,
+        "requires_coordination": true,
+        "requires_physical": false
+      },
+      "dims": {},
+      "tags": []
     },
     {
-      "id": "marine_policy",
-      "name": "Gestor@ de proyectos marinos",
-      "tags": ["gestión", "política"],
-      "dims": { "fieldwork": 0, "conservation": 1, "data": 1, "policy": 4, "industry": 0 }
+      "id": "environmental_impact_assessment_officer",
+      "name": "Environmental Impact Assessment (EIA) Officer",
+      "hard": {
+        "requires_diving": false,
+        "requires_offshore": false,
+        "requires_travel": false,
+        "requires_lab": false,
+        "requires_programing": false,
+        "requires_policy_interest": true,
+        "requires_engagement": true,
+        "requires_coordination": true,
+        "requires_physical": false
+      },
+      "dims": {},
+      "tags": []
     },
     {
-      "id": "offshore_ops",
-      "name": "Especialista en operaciones offshore",
-      "tags": ["empresa", "operaciones"],
-      "dims": { "fieldwork": 3, "conservation": 0, "data": 0, "policy": 0, "industry": 4 }
+      "id": "marine_spatial_planning_officer",
+      "name": "Coastal & Marine Spatial Planning",
+      "hard": {
+        "requires_diving": false,
+        "requires_offshore": false,
+        "requires_travel": false,
+        "requires_lab": false,
+        "requires_programing": false,
+        "requires_policy_interest": true,
+        "requires_engagement": true,
+        "requires_coordination": true,
+        "requires_physical": false
+      },
+      "dims": {},
+      "tags": []
+    },
+    {
+      "id": "stakeholder_engagement_officer",
+      "name": "Stakeholder & Engagement Officer",
+      "hard": {
+        "requires_diving": false,
+        "requires_offshore": false,
+        "requires_travel": false,
+        "requires_lab": false,
+        "requires_programing": false,
+        "requires_policy_interest": true,
+        "requires_engagement": true,
+        "requires_coordination": true,
+        "requires_physical": false
+      },
+      "dims": {},
+      "tags": []
+    },
+    {
+      "id": "coastal_climate_resilience_expert",
+      "name": "Coastal Climate Resilience, Adaptation & Risk Expert",
+      "hard": {
+        "requires_diving": false,
+        "requires_offshore": false,
+        "requires_travel": false,
+        "requires_lab": false,
+        "requires_programing": false,
+        "requires_policy_interest": false,
+        "requires_engagement": true,
+        "requires_coordination": true,
+        "requires_physical": false
+      },
+      "dims": {},
+      "tags": []
+    },
+    {
+      "id": "marine_climate_modelling_scientist",
+      "name": "Marine Climate Science & Modelling and Forecast Scientist",
+      "hard": {
+        "requires_diving": false,
+        "requires_offshore": false,
+        "requires_travel": false,
+        "requires_lab": false,
+        "requires_programing": true,
+        "requires_policy_interest": false,
+        "requires_engagement": false,
+        "requires_coordination": false,
+        "requires_physical": false
+      },
+      "dims": {},
+      "tags": []
+    },
+    {
+      "id": "marine_climate_nbs_officer",
+      "name": "Marine Climate Mitigation & Nature-Based Solutions Officer",
+      "hard": {
+        "requires_diving": false,
+        "requires_offshore": false,
+        "requires_travel": false,
+        "requires_lab": false,
+        "requires_programing": false,
+        "requires_policy_interest": false,
+        "requires_engagement": false,
+        "requires_coordination": true,
+        "requires_physical": false
+      },
+      "dims": {},
+      "tags": []
+    },
+    {
+      "id": "climate_policy_advisory_officer",
+      "name": "Climate Policy & Advisory Officer",
+      "hard": {
+        "requires_diving": false,
+        "requires_offshore": false,
+        "requires_travel": false,
+        "requires_lab": false,
+        "requires_programing": false,
+        "requires_policy_interest": true,
+        "requires_engagement": true,
+        "requires_coordination": true,
+        "requires_physical": false
+      },
+      "dims": {},
+      "tags": []
+    },
+    {
+      "id": "marine_ecology_consultant",
+      "name": "Marine Ecology & Biodiversity Research Consultant",
+      "hard": {
+        "requires_diving": false,
+        "requires_offshore": false,
+        "requires_travel": false,
+        "requires_lab": true,
+        "requires_programing": true,
+        "requires_policy_interest": false,
+        "requires_engagement": false,
+        "requires_coordination": false,
+        "requires_physical": false
+      },
+      "dims": {},
+      "tags": []
+    },
+    {
+      "id": "marine_conservation_restoration_officer",
+      "name": "Marine Conservation, Restoration & Protected Areas Officer",
+      "hard": {
+        "requires_diving": false,
+        "requires_offshore": false,
+        "requires_travel": false,
+        "requires_lab": false,
+        "requires_programing": false,
+        "requires_policy_interest": true,
+        "requires_engagement": true,
+        "requires_coordination": true,
+        "requires_physical": false
+      },
+      "dims": {},
+      "tags": []
+    },
+    {
+      "id": "marine_conservation_policy_officer",
+      "name": "Marine Conservation Policy Officer",
+      "hard": {
+        "requires_diving": false,
+        "requires_offshore": false,
+        "requires_travel": false,
+        "requires_lab": false,
+        "requires_programing": false,
+        "requires_policy_interest": true,
+        "requires_engagement": true,
+        "requires_coordination": true,
+        "requires_physical": false
+      },
+      "dims": {},
+      "tags": []
+    },
+    {
+      "id": "marine_environmental_education_officer",
+      "name": "Marine & Environmental Education Officer",
+      "hard": {
+        "requires_diving": false,
+        "requires_offshore": false,
+        "requires_travel": false,
+        "requires_lab": false,
+        "requires_programing": false,
+        "requires_policy_interest": false,
+        "requires_engagement": true,
+        "requires_coordination": true,
+        "requires_physical": false
+      },
+      "dims": {},
+      "tags": []
+    },
+    {
+      "id": "ocean_literacy_science_communication_officer",
+      "name": "Ocean Literacy & Science Communication Officer",
+      "hard": {
+        "requires_diving": false,
+        "requires_offshore": false,
+        "requires_travel": false,
+        "requires_lab": false,
+        "requires_programing": false,
+        "requires_policy_interest": false,
+        "requires_engagement": true,
+        "requires_coordination": true,
+        "requires_physical": false
+      },
+      "dims": {},
+      "tags": []
+    },
+    {
+      "id": "science_communicator",
+      "name": "Science Communicator",
+      "hard": {
+        "requires_diving": false,
+        "requires_offshore": false,
+        "requires_travel": false,
+        "requires_lab": false,
+        "requires_programing": false,
+        "requires_policy_interest": false,
+        "requires_engagement": true,
+        "requires_coordination": true,
+        "requires_physical": false
+      },
+      "dims": {},
+      "tags": []
+    },
+    {
+      "id": "community_engagement_citizen_science_officer",
+      "name": "Community Engagement, Citizen Science & Youth Officer",
+      "hard": {
+        "requires_diving": false,
+        "requires_offshore": false,
+        "requires_travel": false,
+        "requires_lab": false,
+        "requires_programing": false,
+        "requires_policy_interest": false,
+        "requires_engagement": true,
+        "requires_coordination": true,
+        "requires_physical": false
+      },
+      "dims": {},
+      "tags": []
+    },
+    {
+      "id": "fisheries_management_policy_officer",
+      "name": "Fisheries Management & Policy Officer",
+      "hard": {
+        "requires_diving": false,
+        "requires_offshore": false,
+        "requires_travel": false,
+        "requires_lab": false,
+        "requires_programing": false,
+        "requires_policy_interest": true,
+        "requires_engagement": true,
+        "requires_coordination": true,
+        "requires_physical": false
+      },
+      "dims": {},
+      "tags": []
+    },
+    {
+      "id": "fisheries_data_scientist",
+      "name": "Fisheries and Data Scientist",
+      "hard": {
+        "requires_diving": false,
+        "requires_offshore": false,
+        "requires_travel": false,
+        "requires_lab": true,
+        "requires_programing": true,
+        "requires_policy_interest": false,
+        "requires_engagement": false,
+        "requires_coordination": false,
+        "requires_physical": false
+      },
+      "dims": {},
+      "tags": []
+    },
+    {
+      "id": "fisheries_observer",
+      "name": "Fisheries Observer",
+      "hard": {
+        "requires_diving": false,
+        "requires_offshore": true,
+        "requires_travel": true,
+        "requires_lab": false,
+        "requires_programing": false,
+        "requires_policy_interest": false,
+        "requires_engagement": false,
+        "requires_coordination": false,
+        "requires_physical": true
+      },
+      "dims": {},
+      "tags": []
+    },
+    {
+      "id": "aquaculture_production_manager",
+      "name": "Aquaculture Production Manager",
+      "hard": {
+        "requires_diving": false,
+        "requires_offshore": false,
+        "requires_travel": false,
+        "requires_lab": true,
+        "requires_programing": false,
+        "requires_policy_interest": false,
+        "requires_engagement": false,
+        "requires_coordination": true,
+        "requires_physical": false
+      },
+      "dims": {},
+      "tags": []
+    },
+    {
+      "id": "seafood_traceability_certification_specialist",
+      "name": "Fisheries Seafood Traceability & Certification Specialist",
+      "hard": {
+        "requires_diving": false,
+        "requires_offshore": false,
+        "requires_travel": false,
+        "requires_lab": false,
+        "requires_programing": false,
+        "requires_policy_interest": false,
+        "requires_engagement": false,
+        "requires_coordination": true,
+        "requires_physical": false
+      },
+      "dims": {},
+      "tags": []
+    },
+    {
+      "id": "aquaculture_offshore_operations_manager",
+      "name": "Aquaculture Engineering & Offshore Operations Manager",
+      "hard": {
+        "requires_diving": false,
+        "requires_offshore": true,
+        "requires_travel": false,
+        "requires_lab": false,
+        "requires_programing": false,
+        "requires_policy_interest": false,
+        "requires_engagement": false,
+        "requires_coordination": true,
+        "requires_physical": false
+      },
+      "dims": {},
+      "tags": []
+    },
+    {
+      "id": "technical_diver_aquaculture_fisheries",
+      "name": "Technical Diver (Aquaculture & Fisheries)",
+      "hard": {
+        "requires_diving": true,
+        "requires_offshore": true,
+        "requires_travel": true,
+        "requires_lab": false,
+        "requires_programing": false,
+        "requires_policy_interest": false,
+        "requires_engagement": false,
+        "requires_coordination": false,
+        "requires_physical": true
+      },
+      "dims": {},
+      "tags": []
+    },
+    {
+      "id": "marine_consultant",
+      "name": "Marine Consultant",
+      "hard": {
+        "requires_diving": false,
+        "requires_offshore": false,
+        "requires_travel": false,
+        "requires_lab": false,
+        "requires_programing": false,
+        "requires_policy_interest": false,
+        "requires_engagement": true,
+        "requires_coordination": true,
+        "requires_physical": false
+      },
+      "dims": {},
+      "tags": []
+    },
+    {
+      "id": "marine_sustainability_consultant",
+      "name": "Marine Environmental & Sustainability Consultant",
+      "hard": {
+        "requires_diving": false,
+        "requires_offshore": false,
+        "requires_travel": false,
+        "requires_lab": false,
+        "requires_programing": false,
+        "requires_policy_interest": false,
+        "requires_engagement": true,
+        "requires_coordination": true,
+        "requires_physical": false
+      },
+      "dims": {},
+      "tags": []
+    },
+    {
+      "id": "marine_risk_impact_consultant",
+      "name": "Marine Impact Assessment & Risk Consultant",
+      "hard": {
+        "requires_diving": false,
+        "requires_offshore": false,
+        "requires_travel": false,
+        "requires_lab": false,
+        "requires_programing": false,
+        "requires_policy_interest": true,
+        "requires_engagement": true,
+        "requires_coordination": true,
+        "requires_physical": false
+      },
+      "dims": {},
+      "tags": []
+    },
+    {
+      "id": "blue_economy_investment_advisor",
+      "name": "Blue Economy & Marine Investment Advisory Officer",
+      "hard": {
+        "requires_diving": false,
+        "requires_offshore": false,
+        "requires_travel": false,
+        "requires_lab": false,
+        "requires_programing": false,
+        "requires_policy_interest": false,
+        "requires_engagement": true,
+        "requires_coordination": true,
+        "requires_physical": false
+      },
+      "dims": {},
+      "tags": []
+    },
+    {
+      "id": "esg_consultant",
+      "name": "ESG Consultant",
+      "hard": {
+        "requires_diving": false,
+        "requires_offshore": false,
+        "requires_travel": false,
+        "requires_lab": false,
+        "requires_programing": false,
+        "requires_policy_interest": false,
+        "requires_engagement": true,
+        "requires_coordination": true,
+        "requires_physical": false
+      },
+      "dims": {},
+      "tags": []
+    },
+    {
+      "id": "blue_business_manager",
+      "name": "Blue Business Manager",
+      "hard": {
+        "requires_diving": false,
+        "requires_offshore": false,
+        "requires_travel": false,
+        "requires_lab": false,
+        "requires_programing": false,
+        "requires_policy_interest": false,
+        "requires_engagement": true,
+        "requires_coordination": true,
+        "requires_physical": false
+      },
+      "dims": {},
+      "tags": []
+    },
+    {
+      "id": "blue_investor",
+      "name": "Blue Investor",
+      "hard": {
+        "requires_diving": false,
+        "requires_offshore": false,
+        "requires_travel": false,
+        "requires_lab": false,
+        "requires_programing": false,
+        "requires_policy_interest": false,
+        "requires_engagement": true,
+        "requires_coordination": true,
+        "requires_physical": false
+      },
+      "dims": {},
+      "tags": []
+    },
+    {
+      "id": "blue_entrepreneur",
+      "name": "Blue Entrepeneur",
+      "hard": {
+        "requires_diving": false,
+        "requires_offshore": false,
+        "requires_travel": false,
+        "requires_lab": false,
+        "requires_programing": false,
+        "requires_policy_interest": false,
+        "requires_engagement": true,
+        "requires_coordination": true,
+        "requires_physical": false
+      },
+      "dims": {},
+      "tags": []
+    },
+    {
+      "id": "maritime_safety_compliance_manager",
+      "name": "Maritime Safety and Compliance Manager",
+      "hard": {
+        "requires_diving": false,
+        "requires_offshore": true,
+        "requires_travel": false,
+        "requires_lab": false,
+        "requires_programing": false,
+        "requires_policy_interest": false,
+        "requires_engagement": true,
+        "requires_coordination": true,
+        "requires_physical": true
+      },
+      "dims": {},
+      "tags": []
+    },
+    {
+      "id": "maritime_risk_modelling_officer",
+      "name": "Maritime Risk Assessment & Modelling Officer",
+      "hard": {
+        "requires_diving": false,
+        "requires_offshore": true,
+        "requires_travel": false,
+        "requires_lab": false,
+        "requires_programing": true,
+        "requires_policy_interest": false,
+        "requires_engagement": false,
+        "requires_coordination": false,
+        "requires_physical": false
+      },
+      "dims": {},
+      "tags": []
+    },
+    {
+      "id": "offshore_operations_officer",
+      "name": "Offshore Operations & Field Execution Officer",
+      "hard": {
+        "requires_diving": false,
+        "requires_offshore": true,
+        "requires_travel": true,
+        "requires_lab": false,
+        "requires_programing": false,
+        "requires_policy_interest": false,
+        "requires_engagement": true,
+        "requires_coordination": true,
+        "requires_physical": true
+      },
+      "dims": {},
+      "tags": []
+    },
+    {
+      "id": "offshore_subsea_operations_officer",
+      "name": "Offshore Technical & Subsea Operations Officer",
+      "hard": {
+        "requires_diving": true,
+        "requires_offshore": true,
+        "requires_travel": true,
+        "requires_lab": false,
+        "requires_programing": false,
+        "requires_policy_interest": false,
+        "requires_engagement": false,
+        "requires_coordination": true,
+        "requires_physical": true
+      },
+      "dims": {},
+      "tags": []
+    },
+    {
+      "id": "hydrographic_surveyor",
+      "name": "Hydrographic Surveyor",
+      "hard": {
+        "requires_diving": false,
+        "requires_offshore": true,
+        "requires_travel": true,
+        "requires_lab": false,
+        "requires_programing": true,
+        "requires_policy_interest": false,
+        "requires_engagement": false,
+        "requires_coordination": false,
+        "requires_physical": true
+      },
+      "dims": {},
+      "tags": []
+    },
+    {
+      "id": "commercial_diver",
+      "name": "Commercial Diver",
+      "hard": {
+        "requires_diving": true,
+        "requires_offshore": true,
+        "requires_travel": true,
+        "requires_lab": false,
+        "requires_programing": false,
+        "requires_policy_interest": false,
+        "requires_engagement": false,
+        "requires_coordination": false,
+        "requires_physical": true
+      },
+      "dims": {},
+      "tags": []
+    },
+    {
+      "id": "marine_data_scientist",
+      "name": "Marine Data Scientist",
+      "hard": {
+        "requires_diving": false,
+        "requires_offshore": false,
+        "requires_travel": false,
+        "requires_lab": true,
+        "requires_programing": true,
+        "requires_policy_interest": false,
+        "requires_engagement": false,
+        "requires_coordination": false,
+        "requires_physical": false
+      },
+      "dims": {},
+      "tags": []
+    },
+    {
+      "id": "marine_observatory_manager",
+      "name": "Marine Observatory Manager",
+      "hard": {
+        "requires_diving": false,
+        "requires_offshore": false,
+        "requires_travel": false,
+        "requires_lab": false,
+        "requires_programing": false,
+        "requires_policy_interest": false,
+        "requires_engagement": false,
+        "requires_coordination": false,
+        "requires_physical": false
+      },
+      "dims": {},
+      "tags": []
+    },
+    {
+      "id": "marine_research_infrastructure_manager",
+      "name": "Marine Research Infrastructure Manager",
+      "hard": {
+        "requires_diving": false,
+        "requires_offshore": false,
+        "requires_travel": false,
+        "requires_lab": true,
+        "requires_programing": false,
+        "requires_policy_interest": false,
+        "requires_engagement": true,
+        "requires_coordination": true,
+        "requires_physical": false
+      },
+      "dims": {},
+      "tags": []
+    },
+    {
+      "id": "marine_technology_research_scientist",
+      "name": "Marine Technology Research Scientist",
+      "hard": {
+        "requires_diving": false,
+        "requires_offshore": false,
+        "requires_travel": false,
+        "requires_lab": true,
+        "requires_programing": true,
+        "requires_policy_interest": false,
+        "requires_engagement": false,
+        "requires_coordination": false,
+        "requires_physical": false
+      },
+      "dims": {},
+      "tags": []
+    },
+    {
+      "id": "marine_research_programmes_policy_officer",
+      "name": "Marine Research Programmes & Policy Officer",
+      "hard": {
+        "requires_diving": false,
+        "requires_offshore": false,
+        "requires_travel": false,
+        "requires_lab": false,
+        "requires_programing": false,
+        "requires_policy_interest": true,
+        "requires_engagement": true,
+        "requires_coordination": true,
+        "requires_physical": false
+      },
+      "dims": {},
+      "tags": []
+    },
+    {
+      "id": "scientific_diver",
+      "name": "Scientific Diver",
+      "hard": {
+        "requires_diving": true,
+        "requires_offshore": true,
+        "requires_travel": true,
+        "requires_lab": false,
+        "requires_programing": false,
+        "requires_policy_interest": false,
+        "requires_engagement": false,
+        "requires_coordination": false,
+        "requires_physical": true
+      },
+      "dims": {},
+      "tags": []
+    },
+    {
+      "id": "marine_renewable_energy_specialist",
+      "name": "Marine Renewable Energy Specialist",
+      "hard": {
+        "requires_diving": false,
+        "requires_offshore": false,
+        "requires_travel": false,
+        "requires_lab": false,
+        "requires_programing": false,
+        "requires_policy_interest": false,
+        "requires_engagement": false,
+        "requires_coordination": true,
+        "requires_physical": false
+      },
+      "dims": {},
+      "tags": []
+    },
+    {
+      "id": "marine_energy_metocean_scientist",
+      "name": "Marine Energy Resource & Metocean Scientist",
+      "hard": {
+        "requires_diving": false,
+        "requires_offshore": false,
+        "requires_travel": false,
+        "requires_lab": false,
+        "requires_programing": true,
+        "requires_policy_interest": false,
+        "requires_engagement": false,
+        "requires_coordination": false,
+        "requires_physical": false
+      },
+      "dims": {},
+      "tags": []
+    },
+    {
+      "id": "offshore_energy_environmental_officer",
+      "name": "Offshore Energy Environmental & Impact Officer",
+      "hard": {
+        "requires_diving": false,
+        "requires_offshore": false,
+        "requires_travel": false,
+        "requires_lab": false,
+        "requires_programing": false,
+        "requires_policy_interest": false,
+        "requires_engagement": true,
+        "requires_coordination": true,
+        "requires_physical": false
+      },
+      "dims": {},
+      "tags": []
+    },
+    {
+      "id": "marine_renewable_energy_project_manager",
+      "name": "Marine Renewable Energy Project Manager",
+      "hard": {
+        "requires_diving": false,
+        "requires_offshore": true,
+        "requires_travel": false,
+        "requires_lab": false,
+        "requires_programing": false,
+        "requires_policy_interest": false,
+        "requires_engagement": true,
+        "requires_coordination": true,
+        "requires_physical": false
+      },
+      "dims": {},
+      "tags": []
+    },
+    {
+      "id": "marine_hydrodynamics_vessel_analyst",
+      "name": "Marine Hydrodynamics & Vessel Performance Analyst",
+      "hard": {
+        "requires_diving": false,
+        "requires_offshore": false,
+        "requires_travel": false,
+        "requires_lab": true,
+        "requires_programing": true,
+        "requires_policy_interest": false,
+        "requires_engagement": false,
+        "requires_coordination": false,
+        "requires_physical": false
+      },
+      "dims": {},
+      "tags": []
+    },
+    {
+      "id": "marine_materials_corrosion_specialist",
+      "name": "Marine Materials & Corrosion Specialist",
+      "hard": {
+        "requires_diving": false,
+        "requires_offshore": false,
+        "requires_travel": false,
+        "requires_lab": true,
+        "requires_programing": false,
+        "requires_policy_interest": false,
+        "requires_engagement": false,
+        "requires_coordination": false,
+        "requires_physical": false
+      },
+      "dims": {},
+      "tags": []
+    },
+    {
+      "id": "autonomous_underwater_systems_specialist",
+      "name": "Smart, Autonomous & Underwater Systems Specialist",
+      "hard": {
+        "requires_diving": false,
+        "requires_offshore": true,
+        "requires_travel": true,
+        "requires_lab": false,
+        "requires_programing": true,
+        "requires_policy_interest": false,
+        "requires_engagement": false,
+        "requires_coordination": false,
+        "requires_physical": false
+      },
+      "dims": {},
+      "tags": []
+    },
+    {
+      "id": "physical_oceanographer",
+      "name": "Physical Oceanographer",
+      "hard": {
+        "requires_diving": false,
+        "requires_offshore": false,
+        "requires_travel": false,
+        "requires_lab": false,
+        "requires_programing": true,
+        "requires_policy_interest": false,
+        "requires_engagement": false,
+        "requires_coordination": false,
+        "requires_physical": false
+      },
+      "dims": {},
+      "tags": []
+    },
+    {
+      "id": "coastal_shelf_physical_oceanographer",
+      "name": "Coastal & Shelf Physical Oceanographer",
+      "hard": {
+        "requires_diving": false,
+        "requires_offshore": false,
+        "requires_travel": false,
+        "requires_lab": false,
+        "requires_programing": true,
+        "requires_policy_interest": false,
+        "requires_engagement": false,
+        "requires_coordination": false,
+        "requires_physical": false
+      },
+      "dims": {},
+      "tags": []
+    },
+    {
+      "id": "estuarine_transitional_physical_oceanographer",
+      "name": "Estuarine & Transitional Waters Physical Oceanographer",
+      "hard": {
+        "requires_diving": false,
+        "requires_offshore": false,
+        "requires_travel": false,
+        "requires_lab": false,
+        "requires_programing": true,
+        "requires_policy_interest": false,
+        "requires_engagement": false,
+        "requires_coordination": false,
+        "requires_physical": false
+      },
+      "dims": {},
+      "tags": []
+    },
+    {
+      "id": "ocean_modelling_observational_scientist",
+      "name": "Ocean Modeling & Observational Physical Oceanographer",
+      "hard": {
+        "requires_diving": false,
+        "requires_offshore": false,
+        "requires_travel": false,
+        "requires_lab": false,
+        "requires_programing": true,
+        "requires_policy_interest": false,
+        "requires_engagement": false,
+        "requires_coordination": false,
+        "requires_physical": false
+      },
+      "dims": {},
+      "tags": []
+    },
+    {
+      "id": "satellite_physical_oceanography_scientist",
+      "name": "Satellite Physical Oceanography Scientist",
+      "hard": {
+        "requires_diving": false,
+        "requires_offshore": false,
+        "requires_travel": false,
+        "requires_lab": false,
+        "requires_programing": true,
+        "requires_policy_interest": false,
+        "requires_engagement": false,
+        "requires_coordination": false,
+        "requires_physical": false
+      },
+      "dims": {},
+      "tags": []
+    },
+    {
+      "id": "marine_geologist",
+      "name": "Marine Geologist",
+      "hard": {
+        "requires_diving": false,
+        "requires_offshore": false,
+        "requires_travel": false,
+        "requires_lab": true,
+        "requires_programing": true,
+        "requires_policy_interest": false,
+        "requires_engagement": false,
+        "requires_coordination": false,
+        "requires_physical": false
+      },
+      "dims": {},
+      "tags": []
+    },
+    {
+      "id": "marine_sedimentologist",
+      "name": "Marine Sedimentologist",
+      "hard": {
+        "requires_diving": false,
+        "requires_offshore": false,
+        "requires_travel": false,
+        "requires_lab": true,
+        "requires_programing": true,
+        "requires_policy_interest": false,
+        "requires_engagement": false,
+        "requires_coordination": false,
+        "requires_physical": false
+      },
+      "dims": {},
+      "tags": []
+    },
+    {
+      "id": "seafloor_mapping_specialist",
+      "name": "Marine Seafloor Mapping Specialist",
+      "hard": {
+        "requires_diving": false,
+        "requires_offshore": false,
+        "requires_travel": false,
+        "requires_lab": false,
+        "requires_programing": true,
+        "requires_policy_interest": false,
+        "requires_engagement": false,
+        "requires_coordination": false,
+        "requires_physical": false
+      },
+      "dims": {},
+      "tags": []
+    },
+    {
+      "id": "marine_paleoceanography_scientist",
+      "name": "Marine Paleoceanography Scientist",
+      "hard": {
+        "requires_diving": false,
+        "requires_offshore": false,
+        "requires_travel": false,
+        "requires_lab": true,
+        "requires_programing": true,
+        "requires_policy_interest": false,
+        "requires_engagement": false,
+        "requires_coordination": false,
+        "requires_physical": false
+      },
+      "dims": {},
+      "tags": []
+    },
+    {
+      "id": "biological_oceanographer",
+      "name": "Biological Oceanographer",
+      "hard": {
+        "requires_diving": false,
+        "requires_offshore": false,
+        "requires_travel": false,
+        "requires_lab": true,
+        "requires_programing": true,
+        "requires_policy_interest": false,
+        "requires_engagement": false,
+        "requires_coordination": false,
+        "requires_physical": false
+      },
+      "dims": {},
+      "tags": []
+    },
+    {
+      "id": "marine_trophic_interaction_scientist",
+      "name": "Marine Trophic and Interaction Scientist",
+      "hard": {
+        "requires_diving": false,
+        "requires_offshore": false,
+        "requires_travel": false,
+        "requires_lab": true,
+        "requires_programing": true,
+        "requires_policy_interest": false,
+        "requires_engagement": false,
+        "requires_coordination": false,
+        "requires_physical": false
+      },
+      "dims": {},
+      "tags": []
+    },
+    {
+      "id": "benthic_pelagic_biological_oceanographer",
+      "name": "Benthic & Pelagic Biological Oceanographer",
+      "hard": {
+        "requires_diving": false,
+        "requires_offshore": false,
+        "requires_travel": false,
+        "requires_lab": true,
+        "requires_programing": true,
+        "requires_policy_interest": false,
+        "requires_engagement": false,
+        "requires_coordination": false,
+        "requires_physical": false
+      },
+      "dims": {},
+      "tags": []
+    },
+    {
+      "id": "marine_microbial_oceanographer",
+      "name": "Marine Microbial Oceanographer",
+      "hard": {
+        "requires_diving": false,
+        "requires_offshore": false,
+        "requires_travel": false,
+        "requires_lab": true,
+        "requires_programing": true,
+        "requires_policy_interest": false,
+        "requires_engagement": false,
+        "requires_coordination": false,
+        "requires_physical": true
+      },
+      "dims": {},
+      "tags": []
+    },
+    {
+      "id": "marine_mammal_observer",
+      "name": "Marine Mammal Observer (MMO)",
+      "hard": {
+        "requires_diving": false,
+        "requires_offshore": false,
+        "requires_travel": false,
+        "requires_lab": false,
+        "requires_programing": false,
+        "requires_policy_interest": false,
+        "requires_engagement": false,
+        "requires_coordination": false,
+        "requires_physical": true
+      },
+      "dims": {},
+      "tags": []
+    },
+    {
+      "id": "chemical_oceanographer",
+      "name": "Chemical Oceanographer",
+      "hard": {
+        "requires_diving": false,
+        "requires_offshore": false,
+        "requires_travel": false,
+        "requires_lab": true,
+        "requires_programing": true,
+        "requires_policy_interest": false,
+        "requires_engagement": false,
+        "requires_coordination": false,
+        "requires_physical": false
+      },
+      "dims": {},
+      "tags": []
+    },
+    {
+      "id": "marine_biogeochemical_oceanographer",
+      "name": "Marine Biogeochemical Oceanographer",
+      "hard": {
+        "requires_diving": false,
+        "requires_offshore": false,
+        "requires_travel": false,
+        "requires_lab": true,
+        "requires_programing": true,
+        "requires_policy_interest": false,
+        "requires_engagement": false,
+        "requires_coordination": false,
+        "requires_physical": false
+      },
+      "dims": {},
+      "tags": []
+    },
+    {
+      "id": "marine_carbon_trace_chemistry_scientist",
+      "name": "Marine Carbon and Trace Chemistry Scientist",
+      "hard": {
+        "requires_diving": false,
+        "requires_offshore": false,
+        "requires_travel": false,
+        "requires_lab": true,
+        "requires_programing": true,
+        "requires_policy_interest": false,
+        "requires_engagement": false,
+        "requires_coordination": false,
+        "requires_physical": false
+      },
+      "dims": {},
+      "tags": []
+    },
+    {
+      "id": "coastal_marine_hydrodynamics_officer",
+      "name": "Coastal & Marine Hydrodynamics Officer",
+      "hard": {
+        "requires_diving": false,
+        "requires_offshore": false,
+        "requires_travel": false,
+        "requires_lab": false,
+        "requires_programing": true,
+        "requires_policy_interest": false,
+        "requires_engagement": false,
+        "requires_coordination": false,
+        "requires_physical": false
+      },
+      "dims": {},
+      "tags": []
+    },
+    {
+      "id": "water_quality_pollution_officer",
+      "name": "Water Quality & Pollution Management Officer",
+      "hard": {
+        "requires_diving": false,
+        "requires_offshore": false,
+        "requires_travel": false,
+        "requires_lab": true,
+        "requires_programing": true,
+        "requires_policy_interest": false,
+        "requires_engagement": true,
+        "requires_coordination": true,
+        "requires_physical": false
+      },
+      "dims": {},
+      "tags": []
+    },
+    {
+      "id": "coastal_flood_hydrology_officer",
+      "name": "Coastal Flood & Extreme Hydrology Officer",
+      "hard": {
+        "requires_diving": false,
+        "requires_offshore": false,
+        "requires_travel": false,
+        "requires_lab": false,
+        "requires_programing": true,
+        "requires_policy_interest": false,
+        "requires_engagement": false,
+        "requires_coordination": false,
+        "requires_physical": false
+      },
+      "dims": {},
+      "tags": []
+    },
+    {
+      "id": "coastal_water_systems_integration_officer",
+      "name": "Coastal Water Systems Integration Officer",
+      "hard": {
+        "requires_diving": false,
+        "requires_offshore": false,
+        "requires_travel": false,
+        "requires_lab": false,
+        "requires_programing": true,
+        "requires_policy_interest": false,
+        "requires_engagement": false,
+        "requires_coordination": true,
+        "requires_physical": false
+      },
+      "dims": {},
+      "tags": []
+    },
+    {
+      "id": "maritime_transport_policy_officer",
+      "name": "Maritime Transport Planning & Policy Officer",
+      "hard": {
+        "requires_diving": false,
+        "requires_offshore": false,
+        "requires_travel": false,
+        "requires_lab": false,
+        "requires_programing": false,
+        "requires_policy_interest": true,
+        "requires_engagement": true,
+        "requires_coordination": true,
+        "requires_physical": false
+      },
+      "dims": {},
+      "tags": []
+    },
+    {
+      "id": "port_maritime_sustainability_officer",
+      "name": "Port & Maritime Sustainability Officer",
+      "hard": {
+        "requires_diving": false,
+        "requires_offshore": false,
+        "requires_travel": false,
+        "requires_lab": false,
+        "requires_programing": false,
+        "requires_policy_interest": false,
+        "requires_engagement": true,
+        "requires_coordination": true,
+        "requires_physical": false
+      },
+      "dims": {},
+      "tags": []
+    },
+    {
+      "id": "maritime_digitalisation_specialist",
+      "name": "Maritime Digitalisation Specialist",
+      "hard": {
+        "requires_diving": false,
+        "requires_offshore": false,
+        "requires_travel": false,
+        "requires_lab": false,
+        "requires_programing": true,
+        "requires_policy_interest": false,
+        "requires_engagement": false,
+        "requires_coordination": false,
+        "requires_physical": false
+      },
+      "dims": {},
+      "tags": []
+    },
+    {
+      "id": "marine_bioprospecting_researcher",
+      "name": "Marine Bioprospecting & Discovery Researcher",
+      "hard": {
+        "requires_diving": false,
+        "requires_offshore": false,
+        "requires_travel": false,
+        "requires_lab": true,
+        "requires_programing": true,
+        "requires_policy_interest": false,
+        "requires_engagement": false,
+        "requires_coordination": false,
+        "requires_physical": false
+      },
+      "dims": {},
+      "tags": []
+    },
+    {
+      "id": "marine_molecular_biotechnology_researcher",
+      "name": "Marine Molecular & Genetic Biotechnology Researcher",
+      "hard": {
+        "requires_diving": false,
+        "requires_offshore": false,
+        "requires_travel": false,
+        "requires_lab": true,
+        "requires_programing": true,
+        "requires_policy_interest": false,
+        "requires_engagement": false,
+        "requires_coordination": false,
+        "requires_physical": false
+      },
+      "dims": {},
+      "tags": []
+    },
+    {
+      "id": "marine_industrial_biotechnology_researcher",
+      "name": "Marine Industrial Biotechnology Researcher",
+      "hard": {
+        "requires_diving": false,
+        "requires_offshore": false,
+        "requires_travel": false,
+        "requires_lab": true,
+        "requires_programing": true,
+        "requires_policy_interest": false,
+        "requires_engagement": false,
+        "requires_coordination": false,
+        "requires_physical": false
+      },
+      "dims": {},
+      "tags": []
+    },
+    {
+      "id": "marine_applied_biotechnology_researcher",
+      "name": "Marine Environmental & Applied Biotechnology Researcher",
+      "hard": {
+        "requires_diving": false,
+        "requires_offshore": false,
+        "requires_travel": false,
+        "requires_lab": true,
+        "requires_programing": true,
+        "requires_policy_interest": false,
+        "requires_engagement": false,
+        "requires_coordination": false,
+        "requires_physical": false
+      },
+      "dims": {},
+      "tags": []
+    },
+    {
+      "id": "blue_biotech_commercialisation_manager",
+      "name": "Blue Biotechnology Management & Commercialisation Manager",
+      "hard": {
+        "requires_diving": false,
+        "requires_offshore": false,
+        "requires_travel": false,
+        "requires_lab": false,
+        "requires_programing": false,
+        "requires_policy_interest": false,
+        "requires_engagement": true,
+        "requires_coordination": true,
+        "requires_physical": false
+      },
+      "dims": {},
+      "tags": []
+    },
+    {
+      "id": "sustainable_marine_tourism_officer",
+      "name": "Sustainable Coastal & Marine Tourism Officer",
+      "hard": {
+        "requires_diving": false,
+        "requires_offshore": false,
+        "requires_travel": true,
+        "requires_lab": false,
+        "requires_programing": false,
+        "requires_policy_interest": false,
+        "requires_engagement": true,
+        "requires_coordination": true,
+        "requires_physical": true
+      },
+      "dims": {},
+      "tags": []
+    },
+    {
+      "id": "marine_adventure_guide",
+      "name": "Marine Adventure Guide / Instructor",
+      "hard": {
+        "requires_diving": true,
+        "requires_offshore": false,
+        "requires_travel": true,
+        "requires_lab": false,
+        "requires_programing": false,
+        "requires_policy_interest": false,
+        "requires_engagement": true,
+        "requires_coordination": false,
+        "requires_physical": true
+      },
+      "dims": {},
+      "tags": []
+    },
+    {
+      "id": "sustainable_marine_tourism_policy_officer",
+      "name": "Sustainable Coastal & Marine Tourism Research and Policy Officer",
+      "hard": {
+        "requires_diving": false,
+        "requires_offshore": false,
+        "requires_travel": false,
+        "requires_lab": false,
+        "requires_programing": false,
+        "requires_policy_interest": true,
+        "requires_engagement": true,
+        "requires_coordination": true,
+        "requires_physical": false
+      },
+      "dims": {},
+      "tags": []
     }
   ]
 }
