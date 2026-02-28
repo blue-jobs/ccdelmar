@@ -1,25 +1,133 @@
 {
-  "dimensions": ["fieldwork", "data", "policy", "industry", "conservation"],
+  "dimensions": [],
+
   "questions": [
+
     {
-      "id": "q1",
-      "text": "¿Qué te motiva más en un trabajo?",
+      "text": "Would you like diving to be a regular part of your job? (Are you comfortable with it?)",
       "options": [
-        { "label": "Estar en el mar / muestreos", "add": { "fieldwork": 2, "conservation": 1 } },
-        { "label": "Analizar datos", "add": { "data": 2 } },
-        { "label": "Influir en políticas públicas", "add": { "policy": 2 } },
-        { "label": "Operación y resultados", "add": { "industry": 2 } }
+        {
+          "label": "Yes",
+          "hard": { "requires_diving": true }
+        },
+        {
+          "label": "No",
+          "hard": { "requires_diving": false }
+        }
       ]
     },
+
     {
-      "id": "q2",
-      "text": "¿Qué tipo de tareas disfrutas más?",
+      "text": "Are you willing to spend several days or weeks away (on a vessel / field campaigns / offshore)?",
       "options": [
-        { "label": "Campo y laboratorio", "add": { "fieldwork": 2 } },
-        { "label": "GIS / programación", "add": { "data": 2 } },
-        { "label": "Coordinar personas", "add": { "policy": 2 } },
-        { "label": "Procesos y logística", "add": { "industry": 2 } }
+        {
+          "label": "Yes",
+          "hard": { "requires_offshore": true }
+        },
+        {
+          "label": "No",
+          "hard": { "requires_offshore": false }
+        }
+      ]
+    },
+
+    {
+      "text": "Are you comfortable traveling frequently (e.g., 1–2 times per month or more)?",
+      "options": [
+        {
+          "label": "Yes",
+          "hard": { "requires_travel": true }
+        },
+        {
+          "label": "No",
+          "hard": { "requires_travel": false }
+        }
+      ]
+    },
+
+    {
+      "text": "Can you see yourself working regularly in a laboratory?",
+      "options": [
+        {
+          "label": "Yes",
+          "hard": { "requires_lab": true }
+        },
+        {
+          "label": "No",
+          "hard": { "requires_lab": false }
+        }
+      ]
+    },
+
+    {
+      "text": "Do you want roles where programming is a central part of your daily work?",
+      "options": [
+        {
+          "label": "Yes",
+          "hard": { "requires_programing": true }
+        },
+        {
+          "label": "No",
+          "hard": { "requires_programing": false }
+        }
+      ]
+    },
+
+    {
+      "text": "Are you specifically interested in working in regulation/public policy as your main focus?",
+      "options": [
+        {
+          "label": "Yes",
+          "hard": { "requires_policy_interest": true }
+        },
+        {
+          "label": "No",
+          "hard": { "requires_policy_interest": false }
+        }
+      ]
+    },
+
+    {
+      "text": "Do you feel comfortable regularly working with communities, clients, or stakeholders (meetings, facilitation, negotiation, engagement, etc.)?",
+      "options": [
+        {
+          "label": "Yes",
+          "hard": { "requires_engagement": true }
+        },
+        {
+          "label": "No",
+          "hard": { "requires_engagement": false }
+        }
+      ]
+    },
+
+    {
+      "text": "Would you feel uncomfortable if your role had little technical work and was focused mainly on coordination and management?",
+      "options": [
+        {
+          "label": "Yes",
+          "hard": { "requires_coordination": false }
+        },
+        {
+          "label": "No",
+          "hard": { "requires_coordination": true }
+        }
+      ]
+    },
+
+    {
+      "text": "Are you comfortable with physically demanding work (harsh weather, long shifts, physical effort)?",
+      "options": [
+        {
+          "label": "Yes",
+          "hard": { "requires_physical": true }
+        },
+        {
+          "label": "No",
+          "hard": { "requires_physical": false }
+        }
       ]
     }
+
   ]
 }
